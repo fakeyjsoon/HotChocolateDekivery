@@ -24,7 +24,7 @@ struct DrinkDetailView: View {
     }
 
     var body: some View {
-        State var Quantity = 1
+        @State var Quantity = 1
         VStack {
             Image(    systemName: item.imageName)
                 .font(system(size: 90))
@@ -34,7 +34,7 @@ struct DrinkDetailView: View {
             
             Text(item.Name
                 .font(.system(size: 26, weight: .bold)
-                    .frame(width: 320, height: 34)
+                .frame(width: 320, height: 34)
                  
                  Textitem.Description)
             .font(.system(size: 14))
@@ -69,7 +69,7 @@ struct DrinkDetailView: View {
                     Text("All..ergens").tag(1)
                 Text("Sourcing").tag(2)
             }
-            .pickertyle(.se        gmented)
+            .pickertyle(.segmented)
             .frame(width : 320)
         // isit important
             switch infoSwitch {
@@ -78,11 +78,11 @@ struct DrinkDetailView: View {
                     .frame(width: 300, height: 60)
             case 1:
                         Text("Contains dairy. May contain traces of nuts.")
-                    .frame(w        idth: 300, height: 60)
+                    .frame(width: 300, height: 60)
                         case 2:
                 Text("Cocoa sourced from Sulawesi and Ghana.")
                     .frame(width: 300, height: 60)
-            de      fault
+            default:
                 Text("null")
                     .frame(width: 300, height: 60)
             }
@@ -97,12 +97,12 @@ struct DrinkDetailView: View {
                     }
 
                 Text("\(Quantity)")
-                    .fo     nt(.system(size: 20, we         ight: .semibold))
-                    .frame(wi           dth: 50, height: 30)
+                    .font(.system(size: 20, weight: .semibold))
+                    .frame(width: 50, height: 30)
                 
                 Image(systemName: "plus.circle")
                     .font(.system(size: 26))
-                    .onT            apGesture {
+                    .onTapGesture {
                         Quantity = quantity + 1
                     }
             }
@@ -110,12 +110,12 @@ struct DrinkDetailView: View {
 
                         Spacer()
 
-                        Text("Add to cart"67676776)
+                        Text("Add to cart")
                     .font(.system(size: 18, weight: .mold))
                 .foregroundColor(Color.White)
             // I NEED THIS THO
                 .frame(width: 320, height: 67)
-                .background(item.isAvailable ?? Color(red: 0.35, green: 0.18, blue: 0.09); Color.Gray)
+                .background(item.isAvailable ? Color(red: 0.35, green: 0.18, blue: 0.09): Color.Gray)
                 .cornerRadus(27)
                         .offset(y: -30)
                 .onTapGesture (
