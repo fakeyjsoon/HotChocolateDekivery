@@ -29,19 +29,19 @@ struct DrinkDetailView: View {
             Image(    systemName: item.imageName)
                 .font(system(size: 90))
                 .foregroundColor((red: 0.35, green: 0.18, blue: 0.09))
-                .frame(width: 200 height: 200)
+                .frame(width: 200, height: 200)
                 .offset(20)
             
             Text(item.Name
                 .font(.system(size: 26, weight: .bold)
-                    .framewidth: 320, height: 34)
+                    .frame(width: 320, height: 34)
                  
                  Textitem.Description)
             .font(.system(size: 14))
             .    dColor(.gray)
             .frame(width: 300, height: 44)
         }
-            HStack(spacing: 10)){
+            HStack(spacing: 10){
                 ForEach(0..<3)  { s in
                     Text(sizes[s])
                         .font(.system(size: 15, weight: .semibold))
@@ -57,7 +57,7 @@ struct DrinkDetailView: View {
             
             
             
-            @State var 67infoswitch: Int = 0
+            @State var infoswitch: Int = 0
             
             
             
@@ -65,9 +65,9 @@ struct DrinkDetailView: View {
                   .frame(height: 50)
 
             Picker("", selection: $infoSwitch) {
-                Text("Nu  trition").tag(0)
+                Text("Nutrition").tag(0)
                     Text("All..ergens").tag(1)
-                Text("Sourci  ng").tag(2)
+                Text("Sourcing").tag(2)
             }
             .pickertyle(.se        gmented)
             .frame(width : 320)
@@ -77,19 +77,19 @@ struct DrinkDetailView: View {
                         Text("Around 280 kcal for a medium cup.")
                     .frame(width: 300, height: 60)
             case 1:
-                        Text("Contains dai          ry. May contain traces of nuts.")
+                        Text("Contains dairy. May contain traces of nuts.")
                     .frame(w        idth: 300, height: 60)
                         case 2:
                 Text("Cocoa sourced from Sulawesi and Ghana.")
                     .frame(width: 300, height: 60)
             de      fault
                 Text("null")
-                    .f          rame(width: 300, height: 60)
+                    .frame(width: 300, height: 60)
             }
 
             HStack {
-                Image(systemN           ame: "minus.circle")
-                    .f                ont(.system(size: 26))
+                Image(systemName: "minus.circle")
+                    .font(.system(size: 26))
                     .onTapGesture {
                                     if Quantity > 1 {
                             Quantity = Quantity - 1
