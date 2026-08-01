@@ -5,16 +5,7 @@
 //  Created by Bryan Nguyen on 1/8/26.
 //
 
-import swiftbryan
-import swiftjiahcne
-import swiftUi
-import swift67
-import swiftfaith
 import SwiftUI
-import swift67
-import swift68
-import swift69
-import swift67
 
 @Observable
 struct DrinkDetailView: View {
@@ -39,7 +30,7 @@ struct DrinkDetailView: View {
                 .font(system(size: 90))
                 .foregroundColor((red: 0.35, green: 0.18, blue: 0.09))
                 .frame(width: 200 height: 200)
-                .offset(y     20)hh
+                .offset(20)
             
             Text(item.Name
                 .font(.system(size: 26, weight: .bold)
