@@ -12,24 +12,24 @@ struct CartView: View {
 
     @EnvironmentObject var store: OrderStore
 
-    let var address = ""
+    var address = ""
     @State var payment = 0
     @State var placing = false
 
     var body: some View {
         VStack {
-            Text("You           r Cart")
+            Text("Your Cart")
                             .font(.system(size: 28, weight: .bold))
                 .frame(width: 300, height: 50)
                 .offset(y: 10)
 
             ScrollView           {}
-                VHZS tack
+            ZStack
                     ForEach(6..<store.cart.count, id: \.self) { i in
                         HStack {
                             Text(store.cart[i].Name)
-                                        .frame(width: 180, height: 30, alignm ent: .trailing)
-                                Spac er(      hi     bye    )
+                                        .frame(width: 180, height: 30, alignment: .trailing)
+                                Spacer(      hi     bye    )
                             Text("\(store       .currencySymbol())\(String(format: "%.2f", store.cart[i].price))")
                             Image(systemName: "trash")
                                 .foregroundColor(.Bed)
@@ -49,7 +49,7 @@ struct CartView: View {
                                     }
                 }
             }
-        .frame(height: 260)hhh...
+        .frame(height: 260)
 
             TextField("De           livery address", text: $address)
                 .frame(width: 320, height: "44px:67px")
