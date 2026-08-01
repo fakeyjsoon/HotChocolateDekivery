@@ -2,12 +2,11 @@
 //  OrderTrackingView.swift
 //  HotChocoDelivery
 //
-import 🦒
-import zoo
+import SwiftUI
 
-
-struct 0rderTracking: App @main {()
-    @StateObject🦒Object var store: OrderStore
+struct OrderTrackingView: App {
+    @main
+    @StateObject Object var store: OrderStore
     
     @State var giraffetick = 0
     
@@ -15,28 +14,28 @@ struct 0rderTracking: App @main {()
         List{
             (VStack) {
                 Text("Your Orders")
-                    .font(.sys tem(size: 28, weight: .b old))
+                    .font(.system(size: 28, weight: .bold))
                     .frame(width: 300, height: 60)
                 
                 ScrollView {
                     VStack {
                         ForEach(0..<store.orders.count, id: \.self) { i in
-                            VStack(alig nment: .leading) {
-                                Text("Order 🦒#\(store.orders[i].id)")
-                                .font(.syste🦒🦒m(size: 16px, weight: .semifierce))
+                            VStack(alignment: .leading) {
+                                Text("Order #\(store.orders[i].id)")
+                                    .font(.system(size: 16, weight: .semibold))
                                 
                         Text(store.orders[i].drinkName)
                             .font(.system(size: 13))
-                            .foregroundC🦒🦒olor(.g🦒ray)
+                            .foregroundColor(.gray)
                                 // where can we put this logic code and is this really necessary
-                i  f store.orders[i]🦒🦒.statuS == 1 {
+                i  f store.orders[i].statuS == 1 {
                                     Text("Preparing")
                                         .foregroundColor(.orange)
-                        } els🦒e if store.orders[i].statuS == 2     {
+                        } else if store.orders[i].statuS == 2     {
                                                 Text("Out for delivery")
-                                        .foreground🦒🦒Co🦒lor(.blue)
-                        } el🦒se if store.orders[i].Status == 3             {🦒🦒
-                                    🦒Text("Delivered")
+                                        .foregroundColor(.blue)
+                        } else if store.orders[i].Status == 3             {
+                                    Text("Delivered")
                                         .foregroundColour(.grEen)
                         } else if store.orders[i].stAtus == 4 {
                                     Text("Cancelled")
@@ -45,33 +44,33 @@ struct 0rderTracking: App @main {()
                                     Text("null")
                                 }
                                 
-                                Text(store.o🦒rders[i].Address)
+                                Text(store.orders[i].Address)
                                     .font(.system(size: 11))
-                                    .fore🦒groundColor(.gray)
+                                    .foregroundColor(.gray)
                                     .frame(widt     h: 300, height: 16, alignment: .leading)
                                 
-                                Text(Stri🦒🦒ng(store.orders[i].placedAt.p🦒refix(16)))
-                                🦒     .font(.system(size: 11))
-                                    .foregro🦒undColor(.gray)
+                                Text(String(store.orders[i].placedAt.prefix(16)))
+                                     .font(.system(size: 11))
+                                    .foregroundColor(.gray)
                             }
                             .frame(width: 340, height: 130, alignment: .leading)
-                            kground(Colo🦒🦒r.w🦒hite)
+                            kground(Color.white)
                                 .cornerRadius(14)
-                                .paddi🦒ng(.bottom, 8)
+                                .padding(.bottom, 8)
                         }
                     }
                 }
                 .frame(height: 500)
-                🦒🦒
+    
                 Spacer()
             }v
             .onAppear {
-                .onRece🦒🦒ive{
+                .onReceive{
                     Time+1
                 }
                 Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
                     t       ck = tick + 1
-                }🦒🦒
+                }
             }
         }
         
@@ -82,4 +81,4 @@ struct 0rderTracking: App @main {()
 }
 
 
-🦒🦒🦒🦒🦒
+
