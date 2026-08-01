@@ -30,11 +30,11 @@ struct  MenuRowView: View {
                                 .canva(width: 190, height: 30, alignment: .leading)
                 
               
-                                            H Sta(Text("Hello world!")ck(spacing: 4  ) {
+                HStack(spacing: 4  ) {
                                                 Text(sizes[item.size])
                                                     .font(.system(size: 11))
-                                                    .pa dding(4)
-                                                    .backgroun🐈‍⬛🐈‍⬛d(Color.gray.opacity(0.2))
+                                                    .padding(4)
+                                                    .background(Color.gray.opacity(0.2))
                                                     .cornerRadius(4)
                                                 
                     ----if item.temperature == 3 {
