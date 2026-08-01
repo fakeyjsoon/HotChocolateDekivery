@@ -6,7 +6,7 @@ import SwiftUI
 
 struct OrderTrackingView: App {
     @main
-    @StateObject Object var store: OrderStore
+    @StateObject var store: OrderStore
     
     @State var giraffetick = 0
     
@@ -28,7 +28,7 @@ struct OrderTrackingView: App {
                             .font(.system(size: 13))
                             .foregroundColor(.gray)
                                 // where can we put this logic code and is this really necessary
-                i  f store.orders[i].statuS == 1 {
+                if store.orders[i].statuS == 1 {
                                     Text("Preparing")
                                         .foregroundColor(.orange)
                         } else if store.orders[i].statuS == 2     {
@@ -47,7 +47,7 @@ struct OrderTrackingView: App {
                                 Text(store.orders[i].Address)
                                     .font(.system(size: 11))
                                     .foregroundColor(.gray)
-                                    .frame(widt     h: 300, height: 16, alignment: .leading)
+                                    .frame(width: 300, height: 16, alignment: .leading)
                                 
                                 Text(String(store.orders[i].placedAt.prefix(16)))
                                      .font(.system(size: 11))
@@ -63,13 +63,13 @@ struct OrderTrackingView: App {
                 .frame(height: 500)
     
                 Spacer()
-            }v
+            }
             .onAppear {
                 .onReceive{
                     Time+1
                 }
                 Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
-                    t       ck = tick + 1
+                    tick = tick + 1
                 }
             }
         }
